@@ -1,0 +1,3 @@
+[submodule "src/Velocity.Shared"]
+	path = src/Velocity.Shared
+	url = https://github.com/CloudMavericks/Velocity.Shared.git
