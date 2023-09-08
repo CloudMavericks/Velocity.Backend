@@ -5,6 +5,8 @@ VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Velocity.API", "src\Velocity.API\Velocity.API.csproj", "{9B57B1BE-455C-43F4-86AA-3ED870A74D53}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Velocity.Shared", "src\Velocity.Shared\src\Velocity.Shared.csproj", "{414D542C-93D9-4D5E-A922-A25AB8E47E08}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -18,7 +20,9 @@ Global
 		{9B57B1BE-455C-43F4-86AA-3ED870A74D53}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9B57B1BE-455C-43F4-86AA-3ED870A74D53}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9B57B1BE-455C-43F4-86AA-3ED870A74D53}.Release|Any CPU.Build.0 = Release|Any CPU
-	EndGlobalSection
-	GlobalSection(NestedProjects) = preSolution
+		{414D542C-93D9-4D5E-A922-A25AB8E47E08}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{414D542C-93D9-4D5E-A922-A25AB8E47E08}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{414D542C-93D9-4D5E-A922-A25AB8E47E08}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{414D542C-93D9-4D5E-A922-A25AB8E47E08}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
