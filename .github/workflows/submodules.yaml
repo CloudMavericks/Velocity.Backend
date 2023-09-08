@@ -3,6 +3,8 @@ name: Update Submodules
 on:
     push:
         branches: [ main ]
+    repository_dispatch:
+        types: [ update-submodules ]
     workflow_dispatch:
     
 jobs:
@@ -28,3 +30,12 @@ jobs:
                   git add --all
                   git commit -m "Update submodules" || echo "No changes to commit"
                   git push
+                  
+    dispatch:
+        name: Dispatch Base Repository Workflow
+        runs-on: ubuntu-latest
+        steps:
+            - name: Dispatch REST
+              run: |
+                    curl -X POST -H "Accept: application/vnd.github.v3+json" -H "Authorization: token ${{ secrets.DISPATCH_TOKEN }}" https://api.github.com/repos/CloudMavericks/20IT928-PRIEE-C7/dispatches --data '{"event_type": "update-submodules"}'
+            
