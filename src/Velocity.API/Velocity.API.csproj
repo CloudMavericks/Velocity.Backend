@@ -3,10 +3,13 @@
   <ItemGroup>
     <ProjectReference Include="..\Velocity.Shared\src\Velocity.Shared.csproj" />
   </ItemGroup>
+  
+  <ItemGroup>
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.5.0" />
+  </ItemGroup>
 
   <PropertyGroup>
     <TargetFramework>net7.0</TargetFramework>
-    <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
 
