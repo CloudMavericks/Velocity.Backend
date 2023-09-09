@@ -1,5 +1,10 @@
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Options;
 using Microsoft.OpenApi.Models;
+using Velocity.API.Configurations;
+using Velocity.API.Endpoints;
 using Velocity.API.Extensions;
+using Velocity.Shared.Requests;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -30,6 +35,9 @@ app.UseStaticFiles();
 app.UseRouting();
 app.UseAuthentication();
 app.UseAuthorization();
+
+app.MapPost("api/login", ([FromBody] LoginRequest request, [FromServices]IOptions<TokenConfiguration> tokenConfiguration) 
+    => LoginEndpoints.Login(request, tokenConfiguration.Value));
 
 app.MapControllers();
 app.UseSwagger();
