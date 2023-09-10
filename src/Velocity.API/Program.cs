@@ -9,6 +9,7 @@ using Velocity.Shared.Requests;
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddCors();
+builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddTokenConfiguration(builder.Configuration);
 builder.Services.AddControllers();
 builder.Services.AddSwaggerGen(c =>
@@ -36,10 +37,11 @@ app.UseRouting();
 app.UseAuthentication();
 app.UseAuthorization();
 
-app.MapPost("api/login", ([FromBody] LoginRequest request, [FromServices]IOptions<TokenConfiguration> tokenConfiguration) 
-    => LoginEndpoints.Login(request, tokenConfiguration.Value));
-
 app.MapControllers();
+
+app.MapPost("api/login", ([FromBody] LoginRequest request, [FromServices]IOptions<TokenConfiguration> tokenConfiguration) 
+    => LoginEndpoints.Login(request, tokenConfiguration.Value)).WithName("Login").WithOpenApi();
+
 app.UseSwagger();
 app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "Velocity.API v1"));
 
