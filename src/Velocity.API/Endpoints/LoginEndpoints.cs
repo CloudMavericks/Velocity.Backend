@@ -26,7 +26,7 @@ internal static class LoginEndpoints
                 expires: DateTime.Now.AddDays(5),
                 signingCredentials: new SigningCredentials(
                     new SymmetricSecurityKey(Encoding.UTF8.GetBytes(tokenConfiguration.Secret)),
-                    SecurityAlgorithms.HmacSha256Signature
+                    SecurityAlgorithms.HmacSha256
                 )
             );
             var jwtHandler = new JwtSecurityTokenHandler();
